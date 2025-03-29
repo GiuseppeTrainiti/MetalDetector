@@ -2088,29 +2088,29 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       380          0          0          0         16       5477   adc.o
-       488          0          0          0          0       4676   audiotone.o
-        80          0          0          0          0       1524   dac.o
-       382          0          0          0          0       3880   demodulatorclock.o
-       448          0          0          0          0       4532   frequencymeasure.o
-       306          0          0          0          0       3762   invertingchargepump.o
-       518          0          0         32        220       8154   main.o
-       422          0          0          0          0       4455   rotaryencoder.o
-        64         26        392          0       1536        884   startup_stm32f303x8.o
-       148          0          0          8          4       5936   stm32f3xx_hal.o
-       162          0          0          0          0       8495   stm32f3xx_hal_cortex.o
-       442          0          0          0          0       5049   stm32f3xx_hal_gpio.o
-       176          0          0          0          0      62221   stm32f3xx_hal_i2c.o
-       146          0          0          0          0       5733   stm32f3xx_hal_i2c_ex.o
-       278          0          0          0          0       6290   stm32f3xx_hal_msp.o
-      1334          0         32          0          0       7732   stm32f3xx_hal_rcc.o
-       298          0          0          0          0       4912   stm32f3xx_hal_rcc_ex.o
-       220          0          0          0          0      26254   stm32f3xx_hal_spi.o
-        70          0          0          4          0       1314   stm32f3xx_it.o
-        18          0         16          4          0       2263   system_stm32f3xx.o
+       380          0          0          0         16       5461   adc.o
+       488          0          0          0          0       4674   audiotone.o
+        80          0          0          0          0       1505   dac.o
+       382          0          0          0          0       3861   demodulatorclock.o
+       448          0          0          0          0       4513   frequencymeasure.o
+       306          0          0          0          0       3743   invertingchargepump.o
+       518          0          0         32        220       8135   main.o
+       422          0          0          0          0       4436   rotaryencoder.o
+        64         26        392          0       1536        864   startup_stm32f303x8.o
+       148          0          0          8          4       5917   stm32f3xx_hal.o
+       162          0          0          0          0       8476   stm32f3xx_hal_cortex.o
+       442          0          0          0          0       5030   stm32f3xx_hal_gpio.o
+       176          0          0          0          0      62202   stm32f3xx_hal_i2c.o
+       146          0          0          0          0       5714   stm32f3xx_hal_i2c_ex.o
+       278          0          0          0          0       6271   stm32f3xx_hal_msp.o
+      1334          0         32          0          0       7713   stm32f3xx_hal_rcc.o
+       298          0          0          0          0       4893   stm32f3xx_hal_rcc_ex.o
+       220          0          0          0          0      26235   stm32f3xx_hal_spi.o
+        70          0          0          4          0       1295   stm32f3xx_it.o
+        18          0         16          4          0       2244   system_stm32f3xx.o
 
     ----------------------------------------------------------------------
-      6434         26        472         48       1776     173543   Object Totals
+      6434         26        472         48       1776     173182   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         54          0          0          0          0          0   (incl. Padding)
 
@@ -2161,8 +2161,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      6788         42        472         48       1872     173795   Grand Totals
-      6788         42        472         48       1872     173795   ELF Image Totals
+      6788         42        472         48       1872     173434   Grand Totals
+      6788         42        472         48       1872     173434   ELF Image Totals
       6788         42        472         48          0          0   ROM Totals
 
 ==============================================================================

@@ -19,7 +19,7 @@
 		GPIOB1 and GPIOB5 (pin D6 and D11) are used for outputing respectively
 		the Quadrature and Phase signals
 		
-		@ TEST: PASSED!
+		@ TEST: PASSED
 
 */
 

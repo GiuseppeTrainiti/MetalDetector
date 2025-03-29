@@ -10,6 +10,8 @@
 			D8 (PF1): Phase A used as interrupt EXTI1 reference
 			D3 (PB0): Phase B
 			A7 (PA2): Pushbutton EXTI2
+			
+			@TEST: PASSED
 	
 */
 

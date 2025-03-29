@@ -1,10 +1,25 @@
 #include "stm32f303x8.h"
 
 /*
-		This file implement the tone generation for target discrimination.
-		It uses the argument variable in order to generate the tone. All significant
-		target causes signal in the lower left quadrant, meaning that the
-		arctg can go from 0 to -90.
+		This code generate a sound that is derived by a Carthesian 
+		interpretation of the I and Q signals. 
+		
+		The Q signals generate a low pitch tone, while the I signal
+		generates an High pitch noise. 
+		
+		Both increase in frequency proportionately to the single
+		signal strenght. The discrimination is performed by hearing
+		the different ratios by the high and low pitch sounds.
+		
+		PRO: very easy to balance and tare the detector
+		CONS: I am not able to distinguis various tone ratios
+		
+		TODO: write the code to generate a sound derived by a POLAR
+		interpretation of the QI signals, where the thresold is the 
+		module of the vector and the pitch is determined by the phase
+		angle. 
+		
+		@TEST: PASSED
 */
 
 extern int ARRbaseLow, ARRbaseHigh;
@@ -48,8 +63,8 @@ void TIM7Init(){
 void TIM6_DAC1_IRQHandler(){
 	TIM6->SR &= ~(1<<0);
 	
-	if(Q <= -Qthreshold/*(2048-Qthreshold)*/ || Q >= Qthreshold/*(2048+Qthreshold)*/){
-		TIM6->ARR = ARRbaseLow + Q /*(Q - 2048)*/;
+	if(Q <= - Qthreshold || Q >= Qthreshold){
+		TIM6->ARR = ARRbaseLow + Q;
 		Qtone = 1-Qtone;
 	}
 	else Qtone = 0;
@@ -61,9 +76,9 @@ void TIM6_DAC1_IRQHandler(){
 void TIM7_DAC2_IRQHandler(){
 	TIM7->SR &= ~(1<<0);
 	
-	if(I <= -Ithreshold/*(2048-Ithreshold)*/ || I >= Ithreshold/*(2048+Ithreshold)*/){
+	if(I <= - Ithreshold || I >= Ithreshold){
 		Itone = 1-Itone;
-		TIM7->ARR = ARRbaseHigh + /*(I - 2048)*/ I;   // offset performed at acquisition
+		TIM7->ARR = ARRbaseHigh + I;   // offset performed at acquisition
 	}
 	else Itone = 0;
 	

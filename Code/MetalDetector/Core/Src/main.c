@@ -38,12 +38,6 @@ volatile float phase, module;
 int main(void){
 	
 	/*
-	Anello oro: 71° anche 2euro
-	1e: 60
-	50cent: 56	
-	*/
-	
-	/*
 			-- INVERTING CHARGE PUMP PINS --
 			D13 (PB3): NPN signal for inverting charge pump
 			D12 (PB4): PNP signal for inverting charge pump

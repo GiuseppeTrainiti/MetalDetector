@@ -1,7 +1,12 @@
 #include "stm32f303xc.h"
 
 /*
-TODO: Implement interrupt at end of conversion
+		This code reads the demodulated signals and assigns
+		them to the relative variable after averaging them.
+		
+		The conversion is triggered by Systick
+		
+		@TEST: PASSED
 */
 
 #define ADCOFFSET 2048  // This is the ADC conversion of the ADC BIAS

@@ -8,6 +8,8 @@
 		zeroed by moving the phase of the sample clocks.
 		FIRST the I channel must be zeroed, THEN the Q channel.
 		
+		@TEST: PASSED
+		
 */
 
 #include "stm32f303x8.h"
