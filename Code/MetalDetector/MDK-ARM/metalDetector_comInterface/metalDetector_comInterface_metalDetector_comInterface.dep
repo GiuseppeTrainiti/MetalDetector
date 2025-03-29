@@ -1,7 +1,7 @@
 Dependencies for Project 'metalDetector_comInterface', Target 'metalDetector_comInterface': (DO NOT MODIFY !)
 CompilerVersion: 6230000::V6.23::ARMCLANG
 F (startup_stm32f303x8.s)(0x67DEA4CD)(--target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/_metalDetector_comInterface-IC:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/PC/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 542" -Wa,armasm,--pd,"STM32F303x8 SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o metaldetector_cominterface/startup_stm32f303x8.o)
-F (../Core/Src/main.c)(0x67E81BFC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include -I ../MDK-ARM -I ../MDK-ARM-I./RTE/_metalDetector_comInterface-IC:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/PC/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="542" -DSTM32F303x8 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303x8-o metaldetector_cominterface/main.o -MMD)
+F (../Core/Src/main.c)(0x67E82E7E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include -I ../MDK-ARM -I ../MDK-ARM-I./RTE/_metalDetector_comInterface-IC:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/PC/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="542" -DSTM32F303x8 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303x8-o metaldetector_cominterface/main.o -MMD)
 I (..\Core\Inc\main.h)(0x67DEA4CB)
 I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal.h)(0x67DD6D4C)
 I (..\Core\Inc\stm32f3xx_hal_conf.h)(0x67DEA4CB)
@@ -492,7 +492,6 @@ F (.\invertingChargePump.h)(0x67DEA7D9)()
 F (.\frequencyMeasure.h)(0x67DEA9A5)()
 F (.\demodulatorClock.h)(0x67DEB79D)()
 F (.\rotaryEncoder.h)(0x67DEBDCF)()
-F (.\ADS1115.h)(0x67E00453)()
 F (.\ADC.h)(0x67E2A342)()
 F (.\audioTone.h)(0x67E567B7)()
 F (.\DAC.h)(0x67E6C961)()
@@ -515,37 +514,11 @@ F (.\rotaryEncoder.c)(0x67E81B87)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=
 I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x67DD6D4C)
 I (..\Drivers\CMSIS\Include\core_cm4.h)(0x67DD6D40)
 I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x67DD6D4C)
-F (.\ADS1115.c)(0x67E00B6E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include -I ../MDK-ARM -I ../MDK-ARM-I./RTE/_metalDetector_comInterface-IC:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/PC/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="542" -DSTM32F303x8 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303x8-o metaldetector_cominterface/ads1115.o -MMD)
-I (ADS1115.h)(0x67E00453)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal.h)(0x67DD6D4C)
-I (..\Core\Inc\stm32f3xx_hal_conf.h)(0x67DEA4CB)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_rcc.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_def.h)(0x67DD6D4C)
-I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f3xx.h)(0x67DD6D4C)
-I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x67DD6D4C)
-I (..\Drivers\CMSIS\Include\core_cm4.h)(0x67DD6D40)
-I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_rcc_ex.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_gpio.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_gpio_ex.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_exti.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_dma.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_dma_ex.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_cortex.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_flash.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_flash_ex.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_i2c.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_i2c_ex.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_pwr.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_pwr_ex.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_spi.h)(0x67DD6D4C)
-I (..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_spi_ex.h)(0x67DD6D4C)
 F (.\ADC.c)(0x67E81B87)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include -I ../MDK-ARM -I ../MDK-ARM-I./RTE/_metalDetector_comInterface-IC:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/PC/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="542" -DSTM32F303x8 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303x8-o metaldetector_cominterface/adc.o -MMD)
 I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303xc.h)(0x67DD6D4C)
 I (..\Drivers\CMSIS\Include\core_cm4.h)(0x67DD6D40)
 I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x67DD6D4C)
-F (.\audioTone.c)(0x67E81BB5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include -I ../MDK-ARM -I ../MDK-ARM-I./RTE/_metalDetector_comInterface-IC:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/PC/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="542" -DSTM32F303x8 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303x8-o metaldetector_cominterface/audiotone.o -MMD)
+F (.\audioTone.c)(0x67E82F1D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O3 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc -I ../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I ../Drivers/CMSIS/Include -I ../MDK-ARM -I ../MDK-ARM-I./RTE/_metalDetector_comInterface-IC:/Users/PC/AppData/Local/Arm/Packs/ARM/CMSIS/6.1.0/CMSIS/Core/Include-IC:/Users/PC/AppData/Local/Arm/Packs/Keil/STM32F3xx_DFP/2.2.2/Drivers/CMSIS/Device/ST/STM32F3xx/Include-D__UVISION_VERSION="542" -DSTM32F303x8 -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F303x8-o metaldetector_cominterface/audiotone.o -MMD)
 I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\stm32f303x8.h)(0x67DD6D4C)
 I (..\Drivers\CMSIS\Include\core_cm4.h)(0x67DD6D40)
 I (..\Drivers\CMSIS\Device\ST\STM32F3xx\Include\system_stm32f3xx.h)(0x67DD6D4C)

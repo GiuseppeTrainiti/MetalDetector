@@ -526,11 +526,6 @@
               <FilePath>.\rotaryEncoder.h</FilePath>
             </File>
             <File>
-              <FileName>ADS1115.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ADS1115.h</FilePath>
-            </File>
-            <File>
               <FileName>ADC.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\ADC.h</FilePath>
@@ -569,11 +564,6 @@
               <FileName>rotaryEncoder.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\rotaryEncoder.c</FilePath>
-            </File>
-            <File>
-              <FileName>ADS1115.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ADS1115.c</FilePath>
             </File>
             <File>
               <FileName>ADC.c</FileName>

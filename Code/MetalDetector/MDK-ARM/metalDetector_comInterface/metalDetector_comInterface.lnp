@@ -23,7 +23,6 @@
 "metaldetector_cominterface\frequencymeasure.o"
 "metaldetector_cominterface\demodulatorclock.o"
 "metaldetector_cominterface\rotaryencoder.o"
-"metaldetector_cominterface\ads1115.o"
 "metaldetector_cominterface\adc.o"
 "metaldetector_cominterface\audiotone.o"
 "metaldetector_cominterface\dac.o"

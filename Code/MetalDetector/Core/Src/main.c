@@ -24,16 +24,18 @@ volatile int oscTime = 6000;																// TX frequency value
 volatile int K = 1000;																			// Phase shift of the demod clocks
 volatile int nextI, nextQ, prevI, prevQ;										// Used as threshold to generate the demod clocks
 volatile int encoderCounter = 0;														// Used to handle the rotation of the encoder
-volatile int Q = 2000, I = 2000;														// Values of the demodulated RX signal
-volatile int phaseThreshold = 150, moduleThreshold = 150;		// Audio tone threshold. They implement sensitivity
+volatile int Q, I;																					// Values of the demodulated RX signal
+volatile int evaluateAngle = 0;															// Used to trigger arctg calculations
+volatile float phase, module;																// RX VECTOR
 
-/* TONE AUDIO VERSION A */
+/* TONE AUDIO VERSION A - CARTHESIAN APPROACH */
 volatile int ARRbaseLow = 9000, ARRbaseHigh = 5000;			
 volatile int Qthreshold = 80, Ithreshold = 80;
 volatile int Itone = 0, Qtone = 0;
 
-volatile int evaluateAngle = 0;															// Used to trigger arctg calculations
-volatile float phase, module;
+/* TONE AUDIO VERSION B - POLAR APPROACH */
+volatile int phaseThreshold = 150, moduleThreshold = 5;		// Audio tone threshold. They implement sensitivity
+
 
 int main(void){
 	
@@ -56,11 +58,6 @@ int main(void){
 			D3 (PB0): Phase B
 			A7 (PA2): Pushbutton
 	
-			-- UART PINS --
-			
-			D1 (PA9): TX
-			D2 (PA10): RX
-			
 			-- I2C PINS -- 
 			
 			D4 (PB7): SDA
@@ -101,9 +98,9 @@ int main(void){
 	/* ************* ROTARY ENCODER INITIALIZATION ************* */
 	EXTI1Config();
 	EXTI2Config();
-	/* ******************* 10ms SysTick CONFIGURATION ****************** */
+	/* ******************* 5ms SysTick CONFIGURATION ****************** */
 	SysTick->CTRL |= 1<<1 | 1<<0;		
-	SysTick->LOAD = 320000; //5ms							  	
+	SysTick->LOAD = 320000; 								  	
 	/* ************* ANALOG TO DIGITAL CONVERSION ************ */
 	ADC1_Init();
 	/* ************* DIGITAL TO ANALOG CONVERSION ************ */
@@ -117,8 +114,10 @@ int main(void){
   while (1){
 		if(evaluateAngle){
 			evaluateAngle = 0;
-			//phase = atan((float)I/Q);
-			//module = sqrt(pow((float)I/16, 2) + pow((float)Q/16, 2));
+			module = sqrt(pow(I/16, 2) + pow(Q/16, 2));
+			if(module>moduleThreshold) phase = /*atan((float)I/Q)*100*/(float)I/Q;
+			else phase = 0;
+			
 		}
   }
 }

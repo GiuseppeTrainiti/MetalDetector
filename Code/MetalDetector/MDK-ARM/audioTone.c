@@ -64,7 +64,7 @@ void TIM6_DAC1_IRQHandler(){
 	TIM6->SR &= ~(1<<0);
 	
 	if(Q <= - Qthreshold || Q >= Qthreshold){
-		TIM6->ARR = ARRbaseLow + Q;
+		TIM6->ARR = ARRbaseLow + Q*2;
 		Qtone = 1-Qtone;
 	}
 	else Qtone = 0;
@@ -78,7 +78,7 @@ void TIM7_DAC2_IRQHandler(){
 	
 	if(I <= - Ithreshold || I >= Ithreshold){
 		Itone = 1-Itone;
-		TIM7->ARR = ARRbaseHigh + I;   // offset performed at acquisition
+		TIM7->ARR = ARRbaseHigh + I*2;   // offset performed at acquisition
 	}
 	else Itone = 0;
 	
