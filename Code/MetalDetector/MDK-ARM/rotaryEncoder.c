@@ -15,8 +15,8 @@
 	
 */
 
-#define KSTEP 2
-#define QSTEP 5
+#define KSTEP 1
+#define QSTEP 1
 
 extern int encoderCounter;
 extern int K;

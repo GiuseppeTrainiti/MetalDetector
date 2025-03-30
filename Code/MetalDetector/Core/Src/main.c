@@ -33,7 +33,7 @@ volatile int evaluateAngle = 0;															// Used to trigger arctg calculati
 
 /* TONE AUDIO VERSION A - CARTHESIAN APPROACH */
 volatile int ARRbaseLow = 9000, ARRbaseHigh = 5000;			
-volatile int Qthreshold = 40, Ithreshold = 40, magnitudeThreshold = 280;
+volatile int Qthreshold = 50, Ithreshold = 50, magnitudeThreshold = 280;
 volatile int Itone = 0, Qtone = 0;
 
 /* RX VECTOR DATA */

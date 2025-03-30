@@ -40,7 +40,7 @@ void TIM6Init(){
 	TIM6->DIER |= 1<<0;											// Enable interrupt on update
 	TIM6->SR |= 0;													// Interrupt flag register
 	TIM6->CNT |= 0;													// Counter variable
-	TIM6->PSC = 20;													// Prescaler
+	TIM6->PSC = 10;													// Prescaler
 	TIM6->ARR = ARRbaseLow;
 	TIM6->CR1 |= 1<<0;											// Timer enable
 	NVIC_SetPriority(TIM6_DAC1_IRQn, 2);		// NVIC priority
@@ -53,7 +53,7 @@ void TIM7Init(){
 	TIM7->DIER |= 1<<0;											// Enable interrupt on update
 	TIM7->SR |= 0;													// Interrupt flag register
 	TIM7->CNT |= 0;													// Counter variable
-	TIM7->PSC = 7;													// Prescaler
+	TIM7->PSC = 10;													// Prescaler
 	TIM7->ARR = ARRbaseHigh;
 	TIM7->CR1 |= 1<<0;											// Timer enable
 	NVIC_SetPriority(TIM7_DAC2_IRQn, 2);		// NVIC priority
