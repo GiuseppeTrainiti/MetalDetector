@@ -10,7 +10,7 @@
 */
 
 #define ADCOFFSET 2048  // This is the ADC conversion of the ADC BIAS
-#define AVG	8
+#define AVG	128
 
 extern int Q, I;
 
@@ -71,7 +71,7 @@ void ADC1_2_IRQHandler(){
 		}
 	}
 	
-		if(ADC1->SQR1 & 1<<7){											// Sampling Q
+		if(ADC1->SQR1 & 1<<7){											// Sampling I
 		if(j < AVG){
 			Iacc = ADC1->DR - ADCOFFSET + Iacc;
 			j++;

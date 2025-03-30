@@ -1,5 +1,4 @@
 #include "stm32f303x8.h"
-
 /*
 		This code generate a sound that is derived by a Carthesian 
 		interpretation of the I and Q signals. 
@@ -26,6 +25,7 @@ extern int ARRbaseLow, ARRbaseHigh;
 extern int Qthreshold, Ithreshold;
 extern int Itone, Qtone;
 extern int I, Q;
+
 
 void toneInit(){
 	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;
@@ -60,6 +60,7 @@ void TIM7Init(){
 	NVIC_EnableIRQ(TIM7_DAC2_IRQn);					// NVIC enable
 }
 
+/* CARTHESIAN TONES */
 void TIM6_DAC1_IRQHandler(){
 	TIM6->SR &= ~(1<<0);
 	

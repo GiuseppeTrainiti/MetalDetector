@@ -23,6 +23,28 @@ metaldetector_cominterface/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_pwr_ex.h \
   ..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_spi.h \
   ..\Drivers\STM32F3xx_HAL_Driver\Inc\stm32f3xx_hal_spi_ex.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_types.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\arm_math_memory.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\none.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\utils.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\basic_math_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\interpolation_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\bayes_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\statistics_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\fast_math_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\matrix_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\complex_math_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\controller_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\support_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\distance_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\svm_defines.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\transform_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\filtering_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\quaternion_math_functions.h \
+  C:\Users\PC\AppData\Local\Arm\Packs\ARM\CMSIS-DSP\1.16.2\Include\dsp\window_functions.h \
   ..\MDK-ARM\invertingChargePump.h ..\MDK-ARM\frequencyMeasure.h \
   ..\MDK-ARM\demodulatorClock.h ..\MDK-ARM\rotaryEncoder.h \
   ..\MDK-ARM\ADC.h ..\MDK-ARM\DAC.h ..\MDK-ARM\audioTone.h

@@ -1,6 +1,7 @@
 #include "main.h"
 
 #include "math.h"
+#include "arm_math.h"
 
 #include "invertingChargePump.h"
 #include "frequencyMeasure.h"
@@ -9,6 +10,8 @@
 #include "ADC.h"
 #include "DAC.h"
 #include "audioTone.h"
+
+#define SYSTICK	20					// Time in ms for SysTick interrupts
 
 
 I2C_HandleTypeDef hi2c1;
@@ -25,16 +28,16 @@ volatile int K = 1000;																			// Phase shift of the demod clocks
 volatile int nextI, nextQ, prevI, prevQ;										// Used as threshold to generate the demod clocks
 volatile int encoderCounter = 0;														// Used to handle the rotation of the encoder
 volatile int Q, I;																					// Values of the demodulated RX signal
+
 volatile int evaluateAngle = 0;															// Used to trigger arctg calculations
-volatile float phase, module;																// RX VECTOR
 
 /* TONE AUDIO VERSION A - CARTHESIAN APPROACH */
 volatile int ARRbaseLow = 9000, ARRbaseHigh = 5000;			
-volatile int Qthreshold = 80, Ithreshold = 80;
+volatile int Qthreshold = 40, Ithreshold = 40, magnitudeThreshold = 280;
 volatile int Itone = 0, Qtone = 0;
 
-/* TONE AUDIO VERSION B - POLAR APPROACH */
-volatile int phaseThreshold = 150, moduleThreshold = 5;		// Audio tone threshold. They implement sensitivity
+/* RX VECTOR DATA */
+float magnitude, phase;
 
 
 int main(void){
@@ -98,9 +101,9 @@ int main(void){
 	/* ************* ROTARY ENCODER INITIALIZATION ************* */
 	EXTI1Config();
 	EXTI2Config();
-	/* ******************* 5ms SysTick CONFIGURATION ****************** */
+	/* ******************* SysTick CONFIGURATION ****************** */
 	SysTick->CTRL |= 1<<1 | 1<<0;		
-	SysTick->LOAD = 320000; 								  	
+	SysTick->LOAD = 6400; 					// 100 us							  	
 	/* ************* ANALOG TO DIGITAL CONVERSION ************ */
 	ADC1_Init();
 	/* ************* DIGITAL TO ANALOG CONVERSION ************ */
@@ -114,10 +117,8 @@ int main(void){
   while (1){
 		if(evaluateAngle){
 			evaluateAngle = 0;
-			module = sqrt(pow(I/16, 2) + pow(Q/16, 2));
-			if(module>moduleThreshold) phase = /*atan((float)I/Q)*100*/(float)I/Q;
-			else phase = 0;
-			
+			magnitude = sqrt(pow(Q, 2)+pow(I, 2));
+			phase = atan((float)Q/I)*100;
 		}
   }
 }
