@@ -10,7 +10,7 @@
 */
 
 #define ADCOFFSET 2048  // This is the ADC conversion of the ADC BIAS
-#define AVG	256
+#define AVG	64
 
 extern int Q, I;
 

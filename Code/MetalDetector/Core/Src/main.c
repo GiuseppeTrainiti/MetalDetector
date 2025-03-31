@@ -21,10 +21,11 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
+static void tare();
 
 volatile int acquisition = 0;																// Used to measure the TX frequency
 volatile int oscTime = 6000;																// TX frequency value
-volatile int K = 1000;																			// Phase shift of the demod clocks
+volatile int K = 800;																				// Phase shift of the demod clocks
 volatile int nextI, nextQ, prevI, prevQ;										// Used as threshold to generate the demod clocks
 volatile int encoderCounter = 0;														// Used to handle the rotation of the encoder
 volatile int Q, I;																					// Values of the demodulated RX signal
@@ -33,11 +34,17 @@ volatile int evaluateAngle = 0;															// Used to trigger arctg calculati
 
 /* TONE AUDIO VERSION A - CARTHESIAN APPROACH */
 volatile int ARRbaseLow = 9000, ARRbaseHigh = 5000;			
-volatile int Qthreshold = 50, Ithreshold = 50, magnitudeThreshold = 280;
+volatile int Qthreshold = 150, Ithreshold = 150, magnitudeThreshold = 550;
 volatile int Itone = 0, Qtone = 0;
 
 /* RX VECTOR DATA */
-float magnitude, phase;
+volatile float magnitude, phase;
+
+/* calibration */
+
+volatile float Imin = 5000, Qmin = 5000;
+volatile int Kmin = 0;
+volatile int calibration = 0;
 
 
 int main(void){
@@ -114,6 +121,8 @@ int main(void){
 	toneInit();
 	/* ************************************************************ */
 	
+	tare();
+	
   while (1){
 		if(evaluateAngle){
 			evaluateAngle = 0;
@@ -121,6 +130,25 @@ int main(void){
 			phase = atan((float)Q/I)*100;
 		}
   }
+}
+
+void tare(){
+	/*
+			This function allows to automatically set the Q bias (DAC1 output)
+			and demodulator clock phase shift (K) in order to make the detector
+			as quiet as possible
+	*/
+	
+	while(K<1000){
+		if(fabs((float)I)<Imin){		// If we reached a new minimum
+			Imin = I;									// Update the minimum threshold
+			Kmin = K;									// Save the K that generated the minimum
+		}
+		K++;												// Next value of K
+		while(!calibration){}				// Wait for next value to stabilizer integrator
+		calibration = 0;						// Ready for next value
+	}
+	K = Kmin;
 }
 
 void SystemClock_Config(void){

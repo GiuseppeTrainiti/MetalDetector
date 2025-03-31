@@ -1,4 +1,5 @@
 #include "stm32f303x8.h"
+#include "math.h"
 /*
 		This code generate a sound that is derived by a Carthesian 
 		interpretation of the I and Q signals. 
@@ -25,6 +26,8 @@ extern int ARRbaseLow, ARRbaseHigh;
 extern int Qthreshold, Ithreshold;
 extern int Itone, Qtone;
 extern int I, Q;
+extern int magnitudeThreshold, magnitude;
+int decision = 0;
 
 
 void toneInit(){
@@ -63,12 +66,11 @@ void TIM7Init(){
 /* CARTHESIAN TONES */
 void TIM6_DAC1_IRQHandler(){
 	TIM6->SR &= ~(1<<0);
-	
-	if(Q <= - Qthreshold || Q >= Qthreshold){
+		
+	if(fabs((float)Q)>Qthreshold){
 		TIM6->ARR = ARRbaseLow + Q*2;
 		Qtone = 1-Qtone;
-	}
-	else Qtone = 0;
+	}else Qtone = 0;
 	
 	if(Qtone || Itone) GPIOA->ODR &= ~(1<<5);
 	else GPIOA->ODR |= 1<<5;
@@ -76,12 +78,11 @@ void TIM6_DAC1_IRQHandler(){
 
 void TIM7_DAC2_IRQHandler(){
 	TIM7->SR &= ~(1<<0);
-	
-	if(I <= - Ithreshold || I >= Ithreshold){
+
+	if(fabs((float)I)>Ithreshold){
+		TIM7->ARR = ARRbaseHigh + I*2;
 		Itone = 1-Itone;
-		TIM7->ARR = ARRbaseHigh + I*2;   // offset performed at acquisition
-	}
-	else Itone = 0;
+	}else Itone = 0;
 	
 	if(Qtone || Itone) GPIOA->ODR &= ~(1<<5);
 	else GPIOA->ODR |= 1<<5;

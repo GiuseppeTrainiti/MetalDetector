@@ -11,7 +11,8 @@ void SVC_Handler(void){}
 void DebugMon_Handler(void){}
 void PendSV_Handler(void){}
 	
-volatile int conversionFlag = 1, n=0;
+volatile int conversionFlag = 1, n=0, c=0;
+extern int calibration;
 extern int evaluateAngle;
 
 void SysTick_Handler(void)
@@ -21,11 +22,17 @@ void SysTick_Handler(void)
 	else conversionFlag--;
 	ADC1_Read(conversionFlag);
 	
-	/* EVALUATE PHASE AND MODULE OF RECEIVED SIGNAL IN MAIN LOOP */
-	
+	/* EVALUATE PHASE AND MODULE OF RECEIVED SIGNAL IN MAIN LOOP */	
 	if(n == 1000){
 		evaluateAngle = 1;
 		n = 0;
 	} else n++;
+	
+	/* calibration */
+		if(c == 500){
+		calibration = 1;
+		c = 0;
+	} else c++;
+	
   HAL_IncTick();
 }
