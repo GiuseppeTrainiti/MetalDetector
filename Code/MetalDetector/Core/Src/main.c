@@ -25,7 +25,7 @@ static void tare();
 
 volatile int acquisition = 0;																// Used to measure the TX frequency
 volatile int oscTime = 6000;																// TX frequency value
-volatile int K = 800;																				// Phase shift of the demod clocks
+volatile int K = 900;																				// Phase shift of the demod clocks
 volatile int nextI, nextQ, prevI, prevQ;										// Used as threshold to generate the demod clocks
 volatile int encoderCounter = 0;														// Used to handle the rotation of the encoder
 volatile int Q, I;																					// Values of the demodulated RX signal
@@ -140,7 +140,8 @@ void tare(){
 	*/
 	
 	while(K<1000){
-		if(fabs((float)I)<Imin){		// If we reached a new minimum
+		if(I<0) I = I*-1;
+		if(I<Imin){									// If we reached a new minimum
 			Imin = I;									// Update the minimum threshold
 			Kmin = K;									// Save the K that generated the minimum
 		}
@@ -148,7 +149,7 @@ void tare(){
 		while(!calibration){}				// Wait for next value to stabilizer integrator
 		calibration = 0;						// Ready for next value
 	}
-	K = Kmin;
+	K = Kmin;											// Store the minimum we found
 }
 
 void SystemClock_Config(void){
