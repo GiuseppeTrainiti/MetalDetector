@@ -27,7 +27,7 @@ void DACInit(){
 	
 	DAC->SWTRIGR |= 0;									// From bit 0 we trigger a conversion. It is done in the SysTick handler
 	
-	DAC->DHR12R1 = 0x450;										// DAC data register 
+	DAC->DHR12R1 = 0;									// DAC data register 
 	
 	DAC->CR |= 1<<0;										// DAC enable
 	

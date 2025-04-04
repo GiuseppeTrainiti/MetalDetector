@@ -10542,7 +10542,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 453.39 185.42 0)
 			(effects
 				(font
@@ -11323,7 +11323,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 271.78 90.17 0)
 			(effects
 				(font
@@ -11408,7 +11408,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 82.55 157.48 0)
 			(effects
 				(font
@@ -11985,7 +11985,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 492.76 185.42 0)
 			(effects
 				(font
@@ -12883,7 +12883,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 524.51 119.38 0)
 			(effects
 				(font
@@ -13575,7 +13575,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 528.32 261.62 0)
 			(effects
 				(font
@@ -13801,7 +13801,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_SMD:Potentiometer_Bourns_3269W_Vertical"
 			(at 205.74 91.44 0)
 			(effects
 				(font
@@ -14072,7 +14072,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
 			(at 229.87 52.07 0)
 			(effects
 				(font
@@ -14215,7 +14215,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 124.1552 85.09 0)
 			(effects
 				(font
@@ -14756,7 +14756,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 529.59 176.53 0)
 			(effects
 				(font
@@ -15455,7 +15455,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
 			(at 229.87 91.44 0)
 			(effects
 				(font
@@ -15724,7 +15724,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 524.51 55.88 0)
 			(effects
 				(font
@@ -15812,7 +15812,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
 			(at 113.03 142.24 0)
 			(effects
 				(font
@@ -17100,7 +17100,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_SMD:Potentiometer_Bourns_3269W_Vertical"
 			(at 187.96 91.44 0)
 			(effects
 				(font
@@ -17304,7 +17304,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_SMD:Potentiometer_Bourns_3269W_Vertical"
 			(at 187.96 52.07 0)
 			(effects
 				(font
@@ -18260,7 +18260,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_SMD:Potentiometer_Bourns_3269W_Vertical"
 			(at 205.74 52.07 0)
 			(effects
 				(font
@@ -18795,7 +18795,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 82.55 128.27 0)
 			(effects
 				(font
@@ -19010,7 +19010,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 345.44 57.15 0)
 			(effects
 				(font
@@ -19561,7 +19561,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 345.44 101.6 0)
 			(effects
 				(font
@@ -19855,7 +19855,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm"
 			(at 438.15 101.6 0)
 			(effects
 				(font
@@ -20034,7 +20034,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 146.05 123.19 0)
 			(effects
 				(font
@@ -20186,7 +20186,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 543.56 295.91 0)
 			(effects
 				(font
@@ -20615,7 +20615,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 554.99 54.61 0)
 			(effects
 				(font
@@ -21716,7 +21716,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm"
 			(at 26.67 125.73 0)
 			(effects
 				(font
@@ -25947,7 +25947,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
 			(at 543.56 331.47 0)
 			(effects
 				(font

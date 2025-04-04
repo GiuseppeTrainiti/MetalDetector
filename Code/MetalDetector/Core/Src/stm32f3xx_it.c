@@ -11,8 +11,8 @@ void SVC_Handler(void){}
 void DebugMon_Handler(void){}
 void PendSV_Handler(void){}
 	
-volatile int conversionFlag = 1, n=0, c=0;
-extern int calibration;
+volatile int conversionFlag = 1, n=0, c=0, p=0;
+extern int calibrationSlow, calibrationFast;
 extern int evaluateAngle;
 
 void SysTick_Handler(void)
@@ -28,9 +28,16 @@ void SysTick_Handler(void)
 		n = 0;
 	} else n++;
 	
-	/* calibration */
-		if(c == 500){
-		calibration = 1;
+	/* SLOW CALIBRATION FOR I SIGNAL */
+	if(p == 1500){
+		calibrationSlow = 1;
+		p = 0;
+	} else p++;
+	
+	
+	/* FAST CALIBRATION FOR Q SIGNAL */
+		if(c == 200){
+		calibrationFast = 1;
 		c = 0;
 	} else c++;
 	

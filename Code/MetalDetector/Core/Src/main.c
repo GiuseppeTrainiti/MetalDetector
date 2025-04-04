@@ -11,9 +11,6 @@
 #include "DAC.h"
 #include "audioTone.h"
 
-#define SYSTICK	20					// Time in ms for SysTick interrupts
-
-
 I2C_HandleTypeDef hi2c1;
 SPI_HandleTypeDef hspi1;
 
@@ -21,30 +18,32 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
-static void tare();
 
 volatile int acquisition = 0;																// Used to measure the TX frequency
 volatile int oscTime = 6000;																// TX frequency value
 volatile int K = 900;																				// Phase shift of the demod clocks
 volatile int nextI, nextQ, prevI, prevQ;										// Used as threshold to generate the demod clocks
 volatile int encoderCounter = 0;														// Used to handle the rotation of the encoder
-volatile int Q, I;																					// Values of the demodulated RX signal
+volatile int Q = 1000, I = 1000;														// Values of the demodulated RX signal
 
 volatile int evaluateAngle = 0;															// Used to trigger arctg calculations
 
 /* TONE AUDIO VERSION A - CARTHESIAN APPROACH */
 volatile int ARRbaseLow = 9000, ARRbaseHigh = 5000;			
-volatile int Qthreshold = 150, Ithreshold = 150, magnitudeThreshold = 550;
+volatile int Qthreshold = 250, Ithreshold = 250;
 volatile int Itone = 0, Qtone = 0;
 
 /* RX VECTOR DATA */
-volatile float magnitude, phase;
+volatile int Qcalib = 100, Icalib = 100, found = 0;
+volatile float magnitude, phase, prevMagnitude;
+volatile float magnitudeDerivative;
+volatile int motionThreshold = 250;
 
 /* calibration */
 
 volatile float Imin = 5000, Qmin = 5000;
 volatile int Kmin = 0;
-volatile int calibration = 0;
+volatile int calibrationSlow = 0, calibrationFast = 0;
 
 
 int main(void){
@@ -108,9 +107,9 @@ int main(void){
 	/* ************* ROTARY ENCODER INITIALIZATION ************* */
 	EXTI1Config();
 	EXTI2Config();
-	/* ******************* SysTick CONFIGURATION ****************** */
+	/* ******************* 100us SysTick CONFIGURATION ****************** */
 	SysTick->CTRL |= 1<<1 | 1<<0;		
-	SysTick->LOAD = 6400; 					// 100 us							  	
+	SysTick->LOAD = 6400; 											  	
 	/* ************* ANALOG TO DIGITAL CONVERSION ************ */
 	ADC1_Init();
 	/* ************* DIGITAL TO ANALOG CONVERSION ************ */
@@ -121,36 +120,41 @@ int main(void){
 	toneInit();
 	/* ************************************************************ */
 	
-	tare();
+	/* ************************* CALIBRATION ************************* */
+	while(!found){													// Until we set the found flag
+		if(I<0)I=I*(-1);											// Absoulte value of I
+		if(I<Icalib)found = 1;								// If it is less than the calibration threshold, set the found flag. Now K is calibrated
+		K++;																	// else increase K to look for the calibration value
+		while(!calibrationSlow){}							// Wait for new K value to settle
+		calibrationSlow = 0;									// Ready for next check
+	}
 	
+	found = 0;															// Restore flag for Q calibration
+		
+	while(!found){													// Until we set the found flag	
+		if(Q<0)Q=Q*(-1);											// Absolute value of Q
+		if(Q<Qcalib)found = 1;								// If it is less than the calibration threshold, set the found flag. Now Q is calibrated
+		DAC1->DHR12R1 = DAC1->DHR12R1 +1;			// else increase the DAC output voltage
+		while(!calibrationFast){}							// Wait for new value to settle
+		calibrationFast = 0;									// Ready for next check
+	}
+	/* *************************************************************** */
+	
+	/* ********** MAIN LOOP ********** */
   while (1){
 		if(evaluateAngle){
 			evaluateAngle = 0;
 			magnitude = sqrt(pow(Q, 2)+pow(I, 2));
-			phase = atan((float)Q/I)*100;
+			magnitudeDerivative = magnitude-prevMagnitude;
+			prevMagnitude = magnitude;
+			if(magnitudeDerivative>motionThreshold){
+				
+			}
+			//phase = atan((float)Q/I)*100;
 		}
   }
 }
 
-void tare(){
-	/*
-			This function allows to automatically set the Q bias (DAC1 output)
-			and demodulator clock phase shift (K) in order to make the detector
-			as quiet as possible
-	*/
-	
-	while(K<1000){
-		if(I<0) I = I*-1;
-		if(I<Imin){									// If we reached a new minimum
-			Imin = I;									// Update the minimum threshold
-			Kmin = K;									// Save the K that generated the minimum
-		}
-		K++;												// Next value of K
-		while(!calibration){}				// Wait for next value to stabilizer integrator
-		calibration = 0;						// Ready for next value
-	}
-	K = Kmin;											// Store the minimum we found
-}
 
 void SystemClock_Config(void){
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
